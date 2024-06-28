@@ -34,8 +34,7 @@ build/
 
 ### maven ###
 target/
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+.mvn/
 
 .DS_Store
 
