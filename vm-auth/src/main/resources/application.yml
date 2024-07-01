@@ -13,7 +13,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/vm
+    url: jdbc:mysql://192.168.22.18:3306/vm
     username: root
     password: 123456
   jpa:

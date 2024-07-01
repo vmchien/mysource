@@ -1,0 +1,20 @@
+FROM maven:3.6.3-openjdk-17 as maven
+
+COPY . /app/zoro
+
+WORKDIR /app/zoro
+
+RUN --mount=type=cache,target=/root/.m2  mvn clean package -Dmaven.test.skip
+
+FROM openjdk:17
+
+WORKDIR /app/zoro
+
+WORKDIR /app/zoro/vm-auth
+
+COPY --from=maven /app/zoro/vm-auth/target/vm-auth-1.0.0.jar /app/zoro/vm-auth/vm-auth-1.0.0.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar" , "/app/zoro/vm-auth/vm-auth-1.0.0.jar"]
+
