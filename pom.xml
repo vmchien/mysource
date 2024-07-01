@@ -4,12 +4,20 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mysource</groupId>
     <artifactId>zoro</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
      <modules>
           <module>vm-auth</module>
      </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <lombok.version>1.18.24</lombok.version>
+        <spring.version>3.3.0</spring.version>
+        <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
+    </properties>
 
 <dependencies>
     <dependency>
@@ -29,12 +37,11 @@
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
-        <version>3.3.0</version>
+        <version>${spring.version}</version>
     </dependency>
     <dependency>
         <groupId>com.mysql</groupId>
         <artifactId>mysql-connector-j</artifactId>
-        <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -43,8 +50,7 @@
     <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.18.24</version> <!-- Bạn có thể kiểm tra phiên bản mới nhất tại trang Maven Central -->
-        <scope>provided</scope>
+        <version>${lombok.version}</version>
     </dependency>
 
 </dependencies>

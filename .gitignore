@@ -35,6 +35,7 @@ build/
 ### maven ###
 target/
 .mvn/
+dependency-reduced-pom.xml
 
 .DS_Store
 
