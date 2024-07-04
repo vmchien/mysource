@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  vm_zoro_compose:
+    driver: bridge
+
+services:
+  vm_auth:
+    build:
+      dockerfile: Dockerfile-auth.yml
+      context: .
+    container_name: vm-auth
+    hostname: auth
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://192.168.22.18:3306/vm
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=123456
+    networks:
+      - vm_zoro_compose
